@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <fieldset>
+      <form action="/" method="post">
+        <input name="sig" type="text" class="input" id="sig" name="sig" placeholder="<%= sig %>" pattern="(0[xX])?[0-9-a-fA-F]{130}" required>
+        <input type="submit" class="button" value="split">
+      </form>
+    </fieldset>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="v" type="text" id="v" name="v" class="input" placeholder="<%= v %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
+          <input name="r" type="text" id="r" name="r" class="input" placeholder="<%= r %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
+          <input name="s" type="text" id="s" name="s" class="input" placeholder="<%= s %>" pattern="(0[xX])?[0-9-a-fA-F]{2}" required>
+          <input type="submit" class="button" value= "combine">
+        </form>
+      </fieldset>
+</body>
+</html>
