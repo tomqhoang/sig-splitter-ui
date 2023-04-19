@@ -1,5 +1,5 @@
 import express from 'express'; 
-import {split, combine} from './index.js';
+import {split, combine} from 'sig-splitter-js';
 import bodyParser from 'body-parser';
 const port = process.env.PORT || 3001;
 
