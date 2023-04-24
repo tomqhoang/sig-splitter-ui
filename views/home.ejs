@@ -7,24 +7,29 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>sig-splitter</title>
+  
 </head>
 <body>
   <div class="container">
     <fieldset>
       <form action="/" method="post">
-        <input name="sig" type="text" class="input" id="sig" name="sig" placeholder="<%= sig %>" pattern="(0[xX])?[0-9-a-fA-F]{130}" required>
-        <input type="submit" class="button" value="split">
+        <input name="sig" type="text" class="ghost-input" id="sig" name="sig" placeholder="<%= sig %>" value="<%= sig %>" pattern="(0[xX])?[0-9-a-fA-F]{130}" required>
+        <input type="submit" class="ghost-button" value="split">
       </form>
     </fieldset>
-    <div class="container">
-      <fieldset>
-        <form action="/" method="post">
-          <input name="v" type="text" id="v" name="v" class="input" placeholder="<%= v %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
-          <input name="r" type="text" id="r" name="r" class="input" placeholder="<%= r %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
-          <input name="s" type="text" id="s" name="s" class="input" placeholder="<%= s %>" pattern="(0[xX])?[0-9-a-fA-F]{2}" required>
-          <input type="submit" class="button" value= "combine">
-        </form>
-      </fieldset>
+  <div class="container">
+    <fieldset>
+      <form action="/" method="post">
+        <input name="v" type="text" id="v" name="v" class="ghost-input" placeholder="<%= v %>"  value="<%= v %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
+        <input name="r" type="text" id="r" name="r" class="ghost-input" placeholder="<%= r %>" value="<%= r %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
+        <input name="s" type="text" id="s" name="s" class="ghost-input" placeholder="<%= s %>" value="<%= s %>"  pattern="(0[xX])?[0-9-a-fA-F]{2}" required>
+        <input type="submit" class="ghost-button" value= "combine">
+       </form>
+    </fieldset>
+<footer>
+  <a href="https://eips.ethereum.org/EIPS/eip-1271">ERC1271</a>
+  <a href="https://github.com/sourabhmarathe/sig-splitter">source</a>
+</footer>
 </body>
 </html>

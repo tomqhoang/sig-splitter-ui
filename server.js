@@ -32,7 +32,7 @@ page.post('/', function (req, res) {
         {
             let input_sig = combine(input_v, input_r, input_s);
             res.render('home', {sig: input_sig, v: input_v, r: input_r, s: input_s, error: null});
-            console.log(input_sig, input_components.v, input_components.r, input_components.s);
+            console.log(input_sig, input_v, input_r, input_s);
         }
     }
     else
