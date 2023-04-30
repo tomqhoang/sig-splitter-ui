@@ -5,28 +5,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-  <
+  <link rel="stylesheet" href="https://tomqhoang.github.io/sig-splitter-ui/public/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>sig-splitter</title>
-  
 </head>
 <body>
   <div class="container">
     <fieldset>
-      <form action="/" method="post">
-        <input name="sig" type="text" class="ghost-input" id="sig" name="sig" placeholder="<%= sig %>" value="<%= sig %>" pattern="(0[xX])?[0-9-a-fA-F]{130}" required>
+      <form action="javascript:page_split()">
+        <input name="input_sig" type="text" class="ghost-input" id="sig" placeholder="Enter signature (Ox...)" pattern="(0[xX])?[0-9-a-fA-F]{130}" required>
         <input type="submit" class="ghost-button" value="split">
       </form>
     </fieldset>
   <div class="container">
     <fieldset>
-      <form action="/" method="post">
-        <input name="v" type="text" id="v" name="v" class="ghost-input" placeholder="<%= v %>"  value="<%= v %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
-        <input name="r" type="text" id="r" name="r" class="ghost-input" placeholder="<%= r %>" value="<%= r %>" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
-        <input name="s" type="text" id="s" name="s" class="ghost-input" placeholder="<%= s %>" value="<%= s %>"  pattern="(0[xX])?[0-9-a-fA-F]{2}" required>
+      <form action="javascript:page_combine()">
+        <input name="input_v" type="text" id="v" class="ghost-input" placeholder="Component - v" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
+        <button data-id="1">COPY</button>
+        <input name="input_r" type="text" id="r" class="ghost-input" placeholder="Component - r" pattern="(0[xX])?[0-9-a-fA-F]{64}" required>
+        <button data-id="1">COPY</button>
+        <input name="input_s" type="text" id="s" class="ghost-input" placeholder="Component - s"  pattern="(0[xX])?[0-9-a-fA-F]{2}" required>
+        <button data-id="1">COPY</button>
         <input type="submit" class="ghost-button" value= "combine">
        </form>
     </fieldset>
+    <script>
+        function page_combine()
+        {
+            document.getElementById("sig").value = module.combine(document.getElementById("v").value, document.getElementById("r").value, document.getElementById("s").value);
+        }   
+        function page_split()
+        {
+            console.log(document.getElementById("sig").value);
+            let input_components = module.split(document.getElementById("sig").value);
+            document.getElementById("v").value = input_components.v;
+            document.getElementById("r").value = input_components.r;
+            document.getElementById("s").value = input_components.s;
+        }
+        const module = {};
+    </script>
+    <script type="module">
+        import { split, combine } from "https://tomqhoang.github.io/sig-splitter-js/index.js";
+        module.split = split;
+        module.combine = combine;
+    </script>
 <footer>
   <a href="https://eips.ethereum.org/EIPS/eip-1271">ERC1271</a>
   <a href="https://github.com/sourabhmarathe/sig-splitter">source</a>
