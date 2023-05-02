@@ -14,18 +14,18 @@
     <fieldset class='fieldset'>
       <form action="javascript:page_split()" class="form">
         <input name="input_sig" type="text" class="ghost-input" id="sig" placeholder="Enter signature (0x...)" pattern="0[xX][0-9-a-fA-F]{130}" required>
-        <button class="button_copy" formaction="javascript:copy_element('sig')">COPY</button>
+        <button class="button_copy" formaction="javascript:copy_element('sig')"></button>
         <input type="submit" class="ghost-button" value="split">
       </form>
     </fieldset>
     <fieldset class='fieldset'>
       <form  class="form">
         <input name="input_v" type="text" id="v" class="ghost-input" placeholder="Component - v" pattern="0[xX][0-9-a-fA-F]{64}" required>
-        <button class="button_copy" formaction="javascript:copy_element('v')">COPY</button>
+        <button class="button_copy" formaction="javascript:copy_element('v')"></button>
         <input name="input_r" type="text" id="r" class="ghost-input" placeholder="Component - r" pattern="0[xX][0-9-a-fA-F]{64}" required>
-        <button class="button_copy" formaction="javascript:copy_element('r')">COPY</button>
+        <button class="button_copy" formaction="javascript:copy_element('r')"></button>
         <input name="input_s" type="text" id="s" class="ghost-input" placeholder="Component - s"  pattern="(0[xX])?[0-9-a-fA-F]{2}" required>
-        <button class="button_copy" formaction="javascript:copy_element('s')">COPY</button>
+        <button class="button_copy" formaction="javascript:copy_element('s')"></button>
         <input type="submit" class="ghost-button" formaction="javascript:page_combine()"value= "combine">
        </form>
     </fieldset>
@@ -69,4 +69,5 @@
       <a href="https://github.com/sourabhmarathe/sig-splitter">source</a>
     </footer>
 </body>
+<!--The copy icon is used with permission from ARISO from here: https://thenounproject.com/icon/copy-4623897/-->
 </html>
